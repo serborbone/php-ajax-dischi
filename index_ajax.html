@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Vue Dischi AJAX</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+    <body>
+
+      <div id="app">
+        <header>
+          <section id="header">
+
+            <div class="header">
+
+                <!-- LOGO -->
+                <a href="#">
+                  <img src="./img/logo.png" alt="logo Spotify">
+                </a>
+
+            </div>
+          </section>
+        </header>
+
+        <main>
+
+          <section id="main">
+
+            <div class="card-container">
+
+                <div class="card" v-for="(singleAlbum, index) in albumsList">
+              
+                  <div class="img-wrap">
+                      <img :src="singleAlbum.poster" alt="album image">
+                  </div>
+                
+                  
+                  <div class="album-name">
+                      <h3>{{singleAlbum.title}}</h3>
+                  </div>
+
+                  <div class="artist-year">
+                      <h4>{{singleAlbum.author}}</h4>
+                      <h5>{{singleAlbum.year}}</h5>
+                  </div>
+                </div>
+    
+
+              </div>
+              
+          </section>
+
+        </main>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+
+</html>
